@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantão Solução · Solução FSA</title>
+  <style>
+    :root{--color-primary:#72101C;--color-primary-hover:#A3192A;--color-text:#202938;--color-background:#F3F6F9;--color-surface:#FFFFFF;--color-pending:#FFF1C2;--color-success:#D9F5DF;--color-rejected:#FFE1E4;}
+    :root{--bg:var(--color-background);--surface:var(--color-surface);--surface-2:#eef2f7;--ink:var(--color-text);--muted:#606D7E;--line:#dfe6ef;--blue:var(--color-primary);--blue-2:#F5E5E8;--teal:#42805B;--yellow:#B98A28;--red:#A3192A;--shadow:0 12px 34px #2029380D;--radius:18px;font-size:16px}
+    [data-theme=dark]{--bg:#18191E;--surface:#23252C;--surface-2:#2D3039;--ink:#F3F6F9;--muted:#B6BECA;--line:#414550;--blue:#F1A8B4;--blue-2:#492630;--teal:#99D8AB;--shadow:0 12px 34px #0003}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:.875rem Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.01em}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{display:flex;min-height:100vh}.sidebar{width:252px;background:var(--color-primary);color:#FBECEF;padding:24px 16px;display:flex;flex-direction:column;gap:25px;transition:.2s}.brand{display:flex;align-items:center;gap:11px;padding:0 10px}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--color-primary-hover);color:var(--color-surface);font-weight:800;font-size:1.25rem}.brand strong{display:block;color:var(--color-surface);font-size:1rem}.brand small{display:block;color:#EAC6CC;margin-top:2px}.nav{display:grid;gap:6px}.nav button{display:flex;align-items:center;gap:12px;text-align:left;padding:12px 13px;border-radius:11px;background:transparent;color:#F3DDE1}.nav button.active,.nav button:hover{background:var(--color-primary-hover);color:var(--color-surface)}.nav-icon{width:20px;text-align:center;font-size:1rem}.sidebar-foot{margin-top:auto;border-top:1px solid #ffffff1c;padding:17px 9px 3px;color:#EAC6CC;font-size:0.75rem;line-height:1.5}.main{flex:1;min-width:0}.topbar{height:76px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;gap:18px}.crumb{color:var(--muted);font-size:0.8125rem}.top-actions{display:flex;align-items:center;gap:9px}.icon-btn,.avatar{width:38px;height:38px;border-radius:11px;background:var(--surface-2);color:var(--ink);display:grid;place-items:center}.avatar{background:var(--color-primary);color:#FFFFFF;font-weight:700}.content{padding:31px 34px;max-width:1600px;margin:auto}.view-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:25px}.eyebrow{color:var(--blue);font-weight:700;text-transform:uppercase;font-size:0.6875rem;letter-spacing:.11em}.view-head h1{margin:5px 0 0;font-size:1.75rem;letter-spacing:-.03em}.view-head p{margin:7px 0 0;color:var(--muted)}.primary{background:var(--color-primary);color:#FFFFFF;padding:11px 16px;border-radius:10px;font-weight:700;box-shadow:0 5px 12px #72101C2B}.primary:hover{background:var(--color-primary-hover)}.ghost{background:var(--surface-2);color:var(--ink);padding:10px 13px;border-radius:10px}.danger{color:var(--red);background:transparent}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.grid{display:grid;gap:18px}.stats{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:20px}.stat{padding:19px}.stat-label{font-size:0.75rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}.stat-value{font-size:1.75rem;font-weight:800;margin-top:10px;letter-spacing:-.04em}.stat-note{font-size:0.6875rem;color:var(--teal);margin-top:6px}.grid-2{grid-template-columns:1.2fr .8fr}.panel{padding:20px}.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.panel-title h3{margin:0;font-size:0.9375rem}.panel-title span{font-size:0.75rem;color:var(--muted)}.chart-row{display:grid;grid-template-columns:110px 1fr 40px;align-items:center;gap:10px;margin:14px 0;font-size:0.75rem}.bar-track{height:9px;background:var(--surface-2);border-radius:10px;overflow:hidden}.bar{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--blue),var(--color-primary-hover))}.donut-wrap{display:flex;align-items:center;gap:25px}.donut{width:142px;height:142px;border-radius:50%;background:conic-gradient(var(--color-primary) 0 35%,#42805B 35% 62%,#B98A28 62% 82%,#C88490 82%);position:relative;flex:0 0 auto}.donut:after{content:"";position:absolute;inset:29px;background:var(--surface);border-radius:50%}.legend{display:grid;gap:12px;font-size:0.75rem}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}.field{display:grid;gap:6px;min-width:160px}.field label{font-size:0.6875rem;font-weight:700;color:var(--muted)}.field input,.field select{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;padding:10px 11px;outline:none}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-2)}.search{flex:1;min-width:210px}.table-card{overflow:hidden}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:850px}.table th{background:var(--surface-2);font-size:0.6875rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;padding:12px 16px;white-space:nowrap}.table td{padding:14px 16px;border-top:1px solid var(--line);white-space:nowrap;font-size:0.75rem}.table tr:hover td{background:#72101C08}.tag{display:inline-flex;padding:5px 8px;border-radius:20px;font-size:0.6875rem;font-weight:700}.tag.yellow{background:var(--color-pending);color:#765400}.tag.green{background:var(--color-success);color:#246038}.tag.red{background:var(--color-rejected);color:#8E2030}.row-actions{display:flex;gap:5px}.row-actions button{padding:6px 8px;border-radius:7px;background:var(--surface-2);color:var(--ink);font-size:0.75rem}.empty{text-align:center;padding:40px;color:var(--muted)}.notice{display:flex;align-items:center;gap:9px;background:var(--color-pending);border:1px solid #f2d995;color:#745200;padding:11px 14px;border-radius:10px;font-size:0.75rem;margin-bottom:18px}.modal-backdrop{position:fixed;inset:0;background:#0b142c88;display:none;align-items:center;justify-content:center;padding:20px;z-index:4}.modal-backdrop.show{display:flex}.modal{width:min(650px,100%);background:var(--surface);border-radius:18px;padding:24px;box-shadow:0 30px 80px #0004}.modal-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:20px}.modal h2{margin:0;font-size:1.25rem}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.modal-foot{display:flex;justify-content:flex-end;gap:9px;margin-top:23px}.toast{position:fixed;right:24px;bottom:24px;display:none;background:var(--color-primary);color:var(--color-surface);padding:13px 17px;border-radius:10px;box-shadow:var(--shadow);z-index:5}.toast.show{display:block}.role{font-size:0.6875rem;background:var(--blue-2);color:var(--blue);padding:5px 8px;border-radius:20px;font-weight:700}.mobile-menu{display:none}
+    @media(max-width:1050px){.stats{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}.sidebar{width:220px}.content{padding:25px}}
+    @media(max-width:700px){.sidebar{position:fixed;z-index:3;inset:0 auto 0 0;transform:translateX(-100%);width:270px}.sidebar.open{transform:translateX(0)}.mobile-menu{display:grid}.topbar{padding:0 17px}.content{padding:22px 16px}.view-head{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:repeat(2,1fr);gap:11px}.stat{padding:15px}.stat-value{font-size:1.4375rem}.modal-grid{grid-template-columns:1fr}.topbar{height:auto;min-height:76px;padding:12px 17px;flex-wrap:wrap}.top-actions{flex-wrap:wrap}.top-actions .icon-btn{display:grid}.icon-btn{flex-shrink:0}}
+    /* Graphite navigation with institutional burgundy accents. */
+    .sidebar{background:#292C32;color:#F3F6F9}
+    .sidebar .brand small,.sidebar-foot{color:#BDC3CD}
+    .nav button{color:#E2E6EC}
+    .nav button:hover{background:#3A3E47;color:#FFFFFF}
+    .nav button.active{background:var(--color-primary);color:#FFFFFF}
+    .nav button.active:hover{background:var(--color-primary-hover)}
+    .sidebar button:focus-visible{outline-color:#F1A8B4}
+    /* Semantic accents keep status colors distinct from brand actions. */
+    .stats .stat:nth-child(1){border-top:3px solid var(--color-primary)}
+    .stats .stat:nth-child(2){border-top:3px solid #B98A28}
+    .stats .stat:nth-child(3){border-top:3px solid #42805B}
+    .stats .stat:nth-child(4){border-top:3px solid var(--color-primary-hover)}
+    .stat-label>span{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--blue-2);color:var(--blue)}
+    .stat:nth-child(2) .stat-label>span{background:var(--color-pending);color:#765400}
+    .stat:nth-child(3) .stat-label>span{background:var(--color-success);color:#246038}
+    .stat:nth-child(4) .stat-label>span{background:var(--color-rejected);color:#8E2030}
+    .stat-note{color:var(--muted)}
+    .row-actions button.danger{background:var(--color-rejected);color:#8E2030}
+    button:focus-visible,select:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    [data-theme=dark] .table tr:hover td{background:#F1A8B40D}
+    .icon-btn:disabled{opacity:.45;cursor:not-allowed}
+    .settings-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+    .profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+    .profile-grid dt{color:var(--muted);font-size:.8rem;margin-bottom:8px}
+    .profile-grid dd{margin:0;overflow-wrap:anywhere;font-weight:600}
+    .settings-dialog{border:1px solid var(--line);color:var(--ink);max-height:90vh;overflow:auto}
+    .settings-dialog::backdrop{background:#0b142c88}
+    .settings-error{color:var(--blue);font-weight:600}
+    .panel-title{gap:12px;flex-wrap:wrap}
+    .table-card>.filters{padding:20px 16px 16px;margin-bottom:0}
+    .table th{padding:14px 16px}
+    .dashboard-refresh{display:grid;gap:8px;justify-items:start}
+    .dashboard-refresh small{color:var(--muted);font-size:.75rem}
+    .signed-out>.app{display:none}
+    .login-page{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+    .login-brand{background:#292C32;color:#FFFFFF;padding:56px;display:flex;flex-direction:column;justify-content:space-between;gap:60px}
+    .login-brand .brand{padding:0}.login-brand .eyebrow{color:#F1A8B4}
+    .login-brand h1{font-size:clamp(2rem,4vw,3.8rem);line-height:1.12;letter-spacing:-.04em;margin:20px 0}
+    .login-brand p{color:#D2D7DF;line-height:1.8;max-width:420px}
+    .login-brand small{color:#BDC3CD}
+    .login-content{display:grid;place-items:center;padding:40px 24px}
+    .login-card{width:100%;max-width:440px}
+    .login-card h2{font-size:1.8rem;letter-spacing:-.03em;margin:10px 0}
+    .login-description{color:var(--muted);line-height:1.6;margin-bottom:28px}
+    .login-submit{width:100%;padding:14px}
+    .login-demo{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+    .login-demo p,.login-note{color:var(--muted);font-size:.8rem;line-height:1.6}
+    .login-profiles{display:grid;gap:8px}.login-profiles button{text-align:left;white-space:normal}
+    .login-note{margin-top:24px}
+    #loginError{color:var(--blue);font-size:.85rem;line-height:1.5}
+    @media(max-width:800px){.login-page{grid-template-columns:1fr}.login-brand{padding:28px;gap:24px}.login-brand h1{font-size:2rem}.login-brand>small{display:none}.login-content{padding:32px 24px}}
+    .conference-select{border:1px solid currentColor;padding:7px 10px;cursor:pointer;min-width:105px}
+    .stats .stat:nth-child(5){border-top:3px solid var(--color-primary)}
+    .stats .stat:nth-child(6){border-top:3px solid #B98A28}
+    .stat:nth-child(6) .stat-label>span{background:var(--color-pending);color:#765400}
+    .stat-label{gap:8px}.stat-label>span{flex-shrink:0}
+    @media(max-width:400px){.stats{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="signed-out">
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">P</div><div><strong>Plantão Solução</strong><small>Solução FSA · MVP</small></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-foot">Dados em memória para demonstração.<br>Permissões simuladas no cliente.</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="top-actions"><button class="icon-btn mobile-menu" id="menuBtn" aria-label="Abrir menu">☰</button><span class="crumb">Operações / <b id="crumb">Dashboard executivo</b></span></div><div class="top-actions"><button class="icon-btn" id="themeBtn" title="Alternar tema">◐</button><button class="icon-btn" id="fontDown" title="Diminuir fonte">A−</button><button class="icon-btn" id="fontUp" title="Aumentar fonte">A+</button><span class="role" id="sessionRole"></span><button class="ghost" id="logoutButton" type="button">Sair</button><div class="avatar">MC</div></div></header>
+    <section class="content" id="content"></section>
+  </main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Cadastro único</div><h2 id="modalTitle">Novo retorno</h2></div><button class="ghost" id="closeModal">✕</button></div><form id="returnForm"><div class="modal-grid"><div class="field"><label>Sócio *</label><input name="socio" required placeholder="Nome do sócio"></div><div class="field"><label>Contrato *</label><input name="contrato" required placeholder="Número do contrato"></div><div class="field"><label>Tipo de contato *</label><select name="tipo" required><option value="">Selecione</option><option>Ligação</option><option>Presencial</option><option>Digital</option></select></div><div class="field"><label>Cobrador *</label><select name="cobrador" required id="cobradorSelect"></select></div><div class="field"><label>Sócio recebeu *</label><select name="recebido" required><option value="">Selecione</option><option>RCS</option><option>Email</option><option>Carta</option><option>Solange</option><option>SMS</option><option>WhatsApp</option><option>Rede Social</option><option>Não identificado</option><option>Protesto</option><option>SERASA</option><option>Vendas</option></select></div><div class="field"><label>Empresa *</label><select name="empresa" required><option value="">Selecione</option><option>Thermas MG</option><option>Itiquira</option><option>AGI Bank</option><option>Saúde e Vida</option><option>Bali Park</option></select></div></div><div class="modal-foot"><button type="button" class="ghost" id="cancelModal">Cancelar</button><button class="primary">Salvar retorno</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="settings.js"></script>
+<script src="login.js"></script>
+<script>
+  let records=[
+    {id:1,socio:'Ana Beatriz Oliveira',contrato:'CTR-2026-001',tipo:'Ligação',cobrador:"Ana Paula Santana",recebido:'WhatsApp',empresa:'Thermas MG',owner:'Mateus Campos',origin:'Administrador',created:'16/11/2026 08:42',status:'Pendente'},
+    {id:2,socio:'Carlos Eduardo Lima',contrato:'CTR-2026-002',tipo:'Presencial',cobrador:"Fabio Limonte",recebido:'Carta',empresa:'Bali Park',owner:'Mariana Alves',origin:'Gestor',created:'15/11/2026 16:10',status:'Pendente'},
+    {id:3,socio:'Fernanda Souza',contrato:'CTR-2026-003',tipo:'Digital',cobrador:"David Gonçalves Magalhaes",recebido:'Email',empresa:'AGI Bank',owner:'João Pedro',origin:'Usuário',created:'15/11/2026 11:27',status:'Pendente'},
+    {id:4,socio:'Lucas Martins',contrato:'CTR-2026-004',tipo:'Ligação',cobrador:"Ana Paula Santana",recebido:'RCS',empresa:'Saúde e Vida',owner:'Mateus Campos',origin:'Administrador',created:'14/11/2026 14:51',status:'Pendente'},
+    {id:5,socio:'Patrícia Ramos',contrato:'CTR-2026-005',tipo:'Presencial',cobrador:"Marciel Marques",recebido:'SMS',empresa:'Itiquira',owner:'Carolina Silva',origin:'Gestor',created:'13/11/2026 09:03',status:'Pendente'}
+  ];
+  let role='ADMINISTRADOR', view='dashboard', editingId=null, font=16;
+  const navItems=[['dashboard','▦','Dashboard executivo'],['retornos','✎','Formulário de retornos'],['consolidado','▤','Consolidado'],['relatorio','▥','Relatório gerencial'],['settings','⚙','Configurações']];
+  const $=s=>document.querySelector(s); const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  function setFontSize(size){
+    font=Math.max(13,Math.min(19,size));
+    document.documentElement.style.fontSize=font+'px';
+    $('#fontDown').disabled=font===13;
+    $('#fontUp').disabled=font===19;
+  }
+  function permitted(v){return !!settings.current()&&(v!=='consolidado'||canChangeConference())}
+  function renderNav(){ $('#nav').innerHTML=navItems.filter(([id])=>permitted(id)).map(([id,ic,label])=>`<button class="${view===id?'active':''}" data-view="${id}"><span class="nav-icon">${ic}</span>${label}</button>`).join(''); document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;$('#sidebar').classList.remove('open');render()}) }
+  function head(kicker,title,desc,action=''){return `<div class="view-head"><div><div class="eyebrow">${kicker}</div><h1>${title}</h1><p>${desc}</p></div>${action}</div>`}
+  function stat(label,value,note,icon){return `<div class="card stat"><div class="stat-label">${label}<span>${icon}</span></div><div class="stat-value">${value}</div><div class="stat-note">${note}</div></div>`}
+  function recordCreationDate(record){
+    if(record.createdAt){
+      const date=new Date(record.createdAt);
+      return Number.isNaN(date.getTime())?null:date;
+    }
+    const match=String(record.created||'').match(/^(\d{2})\/(\d{2})\/(\d{4}),?\s+(\d{2}):(\d{2})(?::(\d{2}))?$/);
+    if(!match)return null;
+    const [,day,month,year,hour,minute,second]=match.map((v,i)=>i?Number(v??0):v);
+    const date=new Date(year,month-1,day,hour,minute,second);
+    return date.getFullYear()===year&&date.getMonth()===month-1&&date.getDate()===day&&date.getHours()===hour&&date.getMinutes()===minute&&date.getSeconds()===Number(second)?date:null;
+  }
+  function executiveMetrics(items,now=new Date()){
+    const start=new Date(now.getFullYear(),now.getMonth(),1);
+    const previousStart=new Date(now.getFullYear(),now.getMonth()-1,1);
+    const previousLastDay=new Date(now.getFullYear(),now.getMonth(),0).getDate();
+    // Match the elapsed day/time; when the prior month is shorter, include its entire last day.
+    const previousEnd=now.getDate()>previousLastDay?new Date(start.getTime()-1):new Date(now.getFullYear(),now.getMonth()-1,now.getDate(),now.getHours(),now.getMinutes(),now.getSeconds(),now.getMilliseconds());
+    let monthly=0,previous=0,overdue=0,invalid=0;
+    for(const record of items){
+      const date=recordCreationDate(record);
+      if(!date){invalid++;continue;}
+      if(date>=start&&date<=now)monthly++;
+      if(date>=previousStart&&date<=previousEnd)previous++;
+      if(record.status==='Pendente'&&now-date>48*60*60*1000)overdue++;
+    }
+    const change=previous?(monthly-previous)/previous*100:null;
+    const comparison=change===null?(monthly?'Sem base no mês anterior':'Sem retornos nos dois períodos'):(change>0?'↑ ':change<0?'↓ ':'')+Math.abs(change).toLocaleString('pt-BR',{maximumFractionDigits:1})+'% vs. mesmo período anterior';
+    return {monthly,previous,overdue,invalid,comparison};
+  }
+  function dashboard(){const metrics=executiveMetrics(records);let pending=records.filter(r=>r.status==='Pendente').length;let yes=records.filter(r=>r.status==='Sim').length;let no=records.filter(r=>r.status==='Não').length;let counts=[...new Set([...settings.values('cobrador'),...records.map(r=>r.cobrador)])].map(c=>[c,records.filter(r=>r.cobrador===c).length]).filter(x=>x[1]);let max=Math.max(1,...counts.map(x=>x[1]));let companies=[...new Set([...settings.values('empresa'),...records.map(r=>r.empresa)])];return head('Visão geral','Dashboard executivo','Acompanhe a operação de retornos em um único lugar.',`<div class="dashboard-refresh"><button type="button" class="primary" id="refreshDashboard">↻ Atualizar dados</button><small role="status">Atualizado às ${new Date().toLocaleTimeString('pt-BR')} · Automático a cada 2 minutos</small></div>`)+`<div class="grid stats">${stat('Total de retornos',records.length,'Registros válidos','↗')}${stat('Conferências pendentes',pending,'Requer atenção','!')}${stat('Aprovadas (Sim)',yes,'Conferidas','✓')}${stat('Rejeitadas (Não)',no,'Em revisão','×')}${stat('Retornos no mês',metrics.monthly,metrics.comparison,'▦')}${stat('Pendentes há mais de 48 horas',metrics.overdue,'Tempo desde o cadastro','◷')}</div><div class="grid grid-2"><div class="card panel"><div class="panel-title"><h3>Total de retornos por cobrador</h3><span>Atualizado agora</span></div>${counts.length?counts.map(([n,v])=>`<div class="chart-row"><span>${esc(n)}</span><div class="bar-track"><div class="bar" style="width:${v/max*100}%"></div></div><b>${v}</b></div>`).join(''):'<div class="empty">Sem dados de cobradores.</div>'}</div><div class="card panel"><div class="panel-title"><h3>Distribuição por recebimento</h3><span>Todos os registros</span></div>${receiptChart()}</div></div><div class="card panel" style="margin-top:18px"><div class="panel-title"><h3>Distribuição por empresa</h3><span>Base consolidada</span></div>${companies.map((c,i)=>`<div class="chart-row"><span>${esc(c)}</span><div class="bar-track"><div class="bar" style="width:${records.length?records.filter(r=>r.empresa===c).length/records.length*100:0}%;background:${['var(--color-primary)','#42805B','#B98A28','#C88490','#687587'][i%5]}"></div></div><b>${records.length?Math.round(records.filter(r=>r.empresa===c).length/records.length*100):0}%</b></div>`).join('')}</div>`}
+  function filters(){return `<div class="filters"><div class="field search"><label for="search">Pesquisar em todas as colunas</label><input id="search" type="search" placeholder="Digite qualquer informação do registro..."></div><div class="field"><label>Empresa</label><select id="filterCompany"><option value="">Todas as empresas</option>${settings.options('empresa','',true)}</select></div><div class="field"><label>Conferência</label><select id="filterStatus"><option value="">Todos os status</option><option>Pendente</option><option>Sim</option><option>Não</option></select></div></div>`}
+  function table(mode='retornos'){let rows=records; if(mode==='relatorio') return `<div class="card table-card">${filters()}<div class="table-wrap"><table class="table"><thead><tr><th>Sócio</th><th>Tipo de contato</th><th>Cobrador</th><th>Sócio recebeu</th><th>Empresa</th><th>Ação</th></tr></thead><tbody id="rows">${rows.map(r=>`<tr><td><b>${esc(r.socio)}</b></td><td>${esc(r.tipo)}</td><td>${esc(r.cobrador)}</td><td>${esc(r.recebido)}</td><td>${esc(r.empresa)}</td><td><button class="row-actions ghost" onclick="editRecord(${r.id})">Corrigir</button></td></tr>`).join('')}</tbody></table></div></div>`;
+    return `<div class="card table-card">${filters()}<div class="table-wrap"><table class="table"><thead><tr><th>Sócio</th><th>Contrato</th><th>Contato</th><th>Cobrador</th><th>Recebido por</th><th>Empresa</th>${mode==='consolidado'?'<th>Conferência</th>':''}<th>Responsável</th><th>Cadastro</th><th>Ações</th></tr></thead><tbody id="rows">${rows.map(r=>`<tr><td><b>${esc(r.socio)}</b></td><td>${esc(r.contrato)}</td><td>${esc(r.tipo)}</td><td>${esc(r.cobrador)}</td><td>${esc(r.recebido)}</td><td>${esc(r.empresa)}</td>${mode==='consolidado'?`<td>${conferenceControl(r)}</td>`:''}<td>${esc(r.owner)}</td><td>${esc(r.created)}</td><td><div class="row-actions"><button onclick="editRecord(${r.id})">Editar</button><button onclick="deleteRecord(${r.id})" class="danger">Excluir</button></div></td></tr>`).join('')}</tbody></table></div></div>`}
+  function retornos(){return head('Cadastro operacional','Formulário de retornos','Cadastre e gerencie retornos com rastreabilidade de origem.',`<button class="primary" id="newBtn">+ Novo retorno</button>`)+`<div class="notice">◈ <span><b>Perfil demonstrativo: ${role}.</b> No MVP, a identidade e as permissões são simuladas no navegador; a versão de produção deverá validar tudo no servidor.</span></div>`+table()}
+  const CONFERENCE_STATUSES=['Pendente','Sim','Não'];
+  function canChangeConference(){
+    return ['ADMINISTRADOR','GESTOR'].includes(settings.current()?.role);
+  }
+  function conferenceControl(record){
+    const color=record.status==='Sim'?'green':record.status==='Não'?'red':'yellow';
+    if(!canChangeConference())return '<span class="tag '+color+'">'+esc(record.status)+'</span>';
+    return '<select class="tag conference-select '+color+'" aria-label="Conferência de '+esc(record.socio)+'" data-conference-id="'+record.id+'" onchange="handleConferenceChange(this)">'+CONFERENCE_STATUSES.map(status=>'<option value="'+status+'" '+(status===record.status?'selected':'')+'>'+status+'</option>').join('')+'</select>';
+  }
+  function updateConference(id,status){
+    if(!canChangeConference())throw Error('Somente gestores e administradores podem alterar a conferência.');
+    if(!CONFERENCE_STATUSES.includes(status))throw Error('Status de conferência inválido.');
+    const record=records.find(item=>item.id===id);
+    if(!record)throw Error('Registro não encontrado.');
+    record.status=status;
+    record.updated=new Date().toISOString();
+    record.conferenceUpdatedBy=settings.current().id;
+    return record;
+  }
+  function handleConferenceChange(select){
+    try{
+      const record=updateConference(Number(select.dataset.conferenceId),select.value);
+      select.className='tag conference-select '+(record.status==='Sim'?'green':record.status==='Não'?'red':'yellow');
+      $('#search')?.dispatchEvent(new Event('input'));
+      toast('Conferência atualizada para '+record.status+'.');
+    }catch(error){
+      const record=records.find(item=>item.id===Number(select.dataset.conferenceId));
+      if(record)select.value=record.status;
+      toast(error.message);
+    }
+  }
+  function consolidado(){if(!canChangeConference())return '<div class="empty">Acesso não autorizado.</div>';return head('Fonte única','Consolidado','Visão centralizada de todos os retornos válidos.',`<span class="role">${role==='GESTOR'?'ESCOPO DA ÁREA':'TODAS AS ORIGENS'}</span>`)+table('consolidado');}
+  function relatorio(){let total=records.length;return head('Análise gerencial','Relatório gerencial',`Consulta operacional · ${total} retornos consistentes com a fonte única.`)+`<div class="card panel" style="margin-bottom:18px"><div class="panel-title"><h3>Quantidade de retornos por operador / cobrador</h3><span>Total geral: <b>${total}</b></span></div>${[...new Set([...settings.values('cobrador'),...records.map(r=>r.cobrador)])].map((c,i)=>`<div class="chart-row"><span>${esc(c)}</span><div class="bar-track"><div class="bar" style="width:${records.length?records.filter(r=>r.cobrador===c).length/records.length*100:0}%"></div></div><b>${records.filter(r=>r.cobrador===c).length}</b></div>`).join('')}</div>${table('relatorio')}`}
+  const DASHBOARD_REFRESH_MS=120000;
+  let dashboardTimer=null;
+  function receiptChart(){
+    const colors=['#72101C','#42805B','#B98A28','#C88490','#687587'];
+    const groups=[...new Set(records.map(r=>r.recebido))].map(label=>({label,count:records.filter(r=>r.recebido===label).length}));
+    if(!groups.length)return '<div class="empty">Nenhum retorno cadastrado.</div>';
+    let angle=0;
+    const segments=groups.map((group,i)=>{const start=angle;angle+=group.count/records.length*360;return colors[i%colors.length]+' '+start+'deg '+angle+'deg';});
+    return '<div class="donut-wrap"><div class="donut" aria-hidden="true" style="background:conic-gradient('+segments.join(',')+')"></div><div class="legend">'+groups.map((group,i)=>'<span><i style="background:'+colors[i%colors.length]+'"></i>'+esc(group.label)+' · '+group.count+' ('+Math.round(group.count/records.length*100)+'%)</span>').join('')+'</div></div>';
+  }
+  function refreshDashboard(manual=false){
+    if(view!=='dashboard'||!settings.current())return;
+    const hadFocus=document.activeElement?.id==='refreshDashboard';
+    $('#content').innerHTML=dashboard();
+    $('#refreshDashboard').onclick=()=>refreshDashboard(true);
+    if(hadFocus)$('#refreshDashboard').focus();
+    if(manual)toast('Dados do dashboard atualizados.');
+  }
+  function syncDashboardRefresh(){
+    if(view==='dashboard'){
+      $('#refreshDashboard').onclick=()=>refreshDashboard(true);
+      if(dashboardTimer===null)dashboardTimer=setInterval(()=>refreshDashboard(),DASHBOARD_REFRESH_MS);
+    }else if(dashboardTimer!==null){
+      clearInterval(dashboardTimer);dashboardTimer=null;
+    }
+  }
+  function render(){if(!settings.current()){showLogin();return;}$('#sessionRole').textContent=role;$('.avatar').textContent=settings.current().name.split(/\s+/).filter(Boolean).slice(0,2).map(n=>n[0]).join('').toUpperCase();$('.avatar').title=settings.current().name;renderNav();$('#crumb').textContent=navItems.find(x=>x[0]===view)?.[2]||'Dashboard executivo'; $('#content').innerHTML=view==='dashboard'?dashboard():view==='retornos'?retornos():view==='consolidado'?consolidado():view==='settings'?settings.render():relatorio();bindFilters();if(view==='settings')settings.bind();syncDashboardRefresh();if($('#newBtn'))$('#newBtn').onclick=()=>openModal();}
+  function normalizeSearch(value){return String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR').trim();}
+  function recordMatchesFilters(record,query,company,status){
+    const fields=['socio','contrato','tipo','cobrador','recebido','empresa','owner','origin','created','status'];
+    const phrase=normalizeSearch(query).replace(/\s+/g,' ');
+    const matches=!phrase||fields.some(key=>normalizeSearch(record[key]).replace(/\s+/g,' ').includes(phrase));
+    return matches&&(!company||record.empresa===company)&&(!status||record.status===status);
+  }
+  function bindFilters(){
+    const apply=()=>{
+      const query=$('#search')?.value||'',company=$('#filterCompany')?.value||'',status=$('#filterStatus')?.value||'';
+      const body=$('#rows');if(!body)return;
+      body.querySelector('[data-search-empty]')?.remove();
+      let visible=0;
+      [...body.rows].forEach((row,index)=>{
+        const match=recordMatchesFilters(records[index],query,company,status);
+        row.hidden=!match;if(match)visible++;
+      });
+      if(!visible){
+        const row=body.insertRow();row.dataset.searchEmpty='true';
+        const cell=row.insertCell();cell.colSpan=body.closest('table').querySelectorAll('thead th').length;
+        cell.className='empty';cell.textContent='Nenhum registro encontrado para os filtros informados.';
+      }
+    };
+    ['search','filterCompany','filterStatus'].forEach(id=>{const el=$('#'+id);if(el)el.oninput=apply;});
+  }
+  function openModal(id){editingId=id||null;let r=records.find(x=>x.id===id);$('#modalTitle').textContent=id?'Editar retorno':'Novo retorno';let f=$('#returnForm');f.reset();for(const key of ['tipo','cobrador','recebido','empresa'])f.elements[key].innerHTML='<option value="">Selecione</option>'+settings.options(key,r?.[key]||'');if(r)Object.keys(r).forEach(k=>{if(f.elements[k])f.elements[k].value=r[k]});$('#modalBackdrop').classList.add('show')}
+  window.editRecord=id=>openModal(id);window.deleteRecord=id=>{if(role==='USUÁRIO'&&records.find(r=>r.id===id).owner!=='João Pedro'){toast('Ação bloqueada pelo perfil demonstrativo.');return}records=records.filter(r=>r.id!==id);toast('Registro excluído.');render()};
+  function toast(msg){$('#toast').textContent=msg;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2600)}
+  function formatMemberName(value){
+    return String(value).toLocaleLowerCase('pt-BR').replace(/(^|[\s'-])(\p{L})/gu,(_,separator,letter)=>separator+letter.toLocaleUpperCase('pt-BR'));
+  }
+  function formatContract(value){return String(value).toLocaleUpperCase('pt-BR');}
+  function formatTextInput(input,formatter){
+    const start=input.selectionStart,end=input.selectionEnd,value=input.value;
+    input.value=formatter(value);
+    if(start!==null&&end!==null)input.setSelectionRange(formatter(value.slice(0,start)).length,formatter(value.slice(0,end)).length);
+  }
+  for(const [field,formatter] of [['socio',formatMemberName],['contrato',formatContract]]){
+    const input=$('#returnForm').elements[field];
+    input.addEventListener('input',event=>{if(!event.isComposing)formatTextInput(input,formatter);});
+    input.addEventListener('compositionend',()=>formatTextInput(input,formatter));
+    input.addEventListener('blur',()=>{input.value=formatter(input.value).trim();});
+  }
+  $('#returnForm').onsubmit=e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.target));d.socio=formatMemberName(d.socio).trim().replace(/\s+/g,' ');d.contrato=formatContract(d.contrato).trim();if(!d.socio||!d.contrato){toast('Preencha o nome do sócio e o contrato.');return;}for(const key of ['tipo','cobrador','recebido','empresa']){const original=records.find(r=>r.id===editingId);if(!settings.values(key).includes(d[key])&&original?.[key]!==d[key]){toast('Selecione uma opção válida de '+key);return;}}let duplicate=records.some(r=>r.contrato.trim().toLowerCase()===d.contrato.trim().toLowerCase()&&r.id!==editingId);if(duplicate){toast('Contrato duplicado: tentativa registrada e bloqueada.');return}if(editingId){Object.assign(records.find(r=>r.id===editingId),d);toast('Retorno atualizado com sucesso.')}else{records.unshift({id:Date.now(),...d,owner:settings.current()?.name||role,ownerId:settings.current()?.id||null,origin:role[0]+role.slice(1).toLowerCase(),createdAt:new Date().toISOString(),created:new Date().toLocaleString('pt-BR'),status:'Pendente'});toast('Retorno cadastrado com sucesso.')}$('#modalBackdrop').classList.remove('show');render()};
+  $('#closeModal').onclick=$('#cancelModal').onclick=()=>$('#modalBackdrop').classList.remove('show');$('#themeBtn').onclick=()=>document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';$('#fontUp').onclick=()=>setFontSize(font+1);$('#fontDown').onclick=()=>setFontSize(font-1);$('#logoutButton').onclick=logout;$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');render();
+</script>
+</body>
+</html>
