@@ -26,7 +26,8 @@ CREATE TYPE app.audit_action AS ENUM ('INSERT', 'UPDATE', 'DELETE', 'LOGIN', 'LO
 CREATE TABLE app.areas (
     id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     name        varchar(120) NOT NULL UNIQUE,
-    created_at  timestamptz NOT NULL DEFAULT now()
+    created_at  timestamptz NOT NULL DEFAULT now(),
+    updated_at  timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE app.users (
