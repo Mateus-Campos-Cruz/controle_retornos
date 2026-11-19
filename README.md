@@ -2,6 +2,21 @@
 
 Aplicação com API Node.js, PostgreSQL e autenticação por e-mail e senha. O frontend deve ser servido pela API: abrir `dist/index.html` como arquivo local não permite autenticar.
 
+## Acesso ao ambiente local de testes
+
+Com o servidor e o banco local de testes em execução neste computador:
+
+| Informação | Valor |
+| --- | --- |
+| Endereço | http://127.0.0.1:3000 |
+| E-mail | `admin@teste.local` |
+| Senha de teste | `TesteInicial1!` |
+| Perfil | Administrador |
+
+Essas credenciais são públicas e exclusivas do banco de testes. Não use essa conta ou senha em produção. O endereço funciona apenas no computador em que o servidor está rodando; não é um endereço de hospedagem pública.
+
+A conta é criada pela preparação dos testes de integração. Clonar o repositório ou executar `npm run db:init` não cria esse administrador. Para uma instalação própria, siga os passos abaixo e crie seu administrador com credenciais diferentes. O banco local e suas configurações privadas não são enviados ao Git.
+
 ## Instalação
 
 1. Instale Node.js 24 LTS e PostgreSQL 14 ou superior.
