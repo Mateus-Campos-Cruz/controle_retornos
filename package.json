@@ -1,0 +1,15 @@
+{
+  "name": "plantao-solucao",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "db:init": "node --env-file-if-exists=.env server/setup.js init",
+    "db:migrate": "node --env-file-if-exists=.env server/setup.js migrate",
+    "admin:create": "node --env-file-if-exists=.env server/setup.js admin",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": { "pg": "^8.16.3" }
+}

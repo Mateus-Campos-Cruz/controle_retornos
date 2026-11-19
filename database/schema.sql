@@ -1,7 +1,7 @@
 -- Plantão Solução - schema PostgreSQL
 -- Compatível com PostgreSQL 14+.
--- O frontend atual trabalha em memória; este arquivo representa o modelo
--- persistente recomendado para a versão de produção.
+-- Modelo persistente utilizado pela API. Para bancos existentes, aplique a migração.
+-- Instalação nova: npm run db:init. Não reaplique este arquivo em um banco existente.
 
 BEGIN;
 
@@ -35,6 +35,8 @@ CREATE TABLE app.users (
     name            varchar(120) NOT NULL,
     email           varchar(254) NOT NULL,
     password_hash   text,
+    must_change_password boolean NOT NULL DEFAULT true,
+    password_changed_at timestamptz,
     role            app.user_role NOT NULL DEFAULT 'USUARIO',
     area_id         uuid REFERENCES app.areas(id) ON DELETE SET NULL,
     is_active       boolean NOT NULL DEFAULT true,
@@ -108,7 +110,7 @@ CREATE UNIQUE INDEX receipt_channels_name_active_uq
 -- mesmo que o MVP inicial apresente três opções fixas.
 CREATE TABLE app.contact_types (
     id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    code        app.contact_type NOT NULL UNIQUE,
+    code        app.contact_type UNIQUE,
     name        varchar(100) NOT NULL,
     is_active   boolean NOT NULL DEFAULT true,
     created_at  timestamptz NOT NULL DEFAULT now(),
@@ -129,6 +131,7 @@ CREATE TABLE app.returns (
     company_id               uuid NOT NULL REFERENCES app.companies(id),
     created_by_user_id       uuid REFERENCES app.users(id) ON DELETE SET NULL,
     origin_role              app.user_role,
+    area_id                  uuid REFERENCES app.areas(id),
     conference_status        app.conference_status NOT NULL DEFAULT 'PENDENTE',
     conference_updated_by    uuid REFERENCES app.users(id) ON DELETE SET NULL,
     conference_updated_at    timestamptz,
@@ -252,4 +255,10 @@ CREATE TRIGGER returns_updated_at
     BEFORE UPDATE ON app.returns
     FOR EACH ROW EXECUTE FUNCTION app.set_updated_at();
 
+CREATE UNIQUE INDEX contact_types_name_active_uq ON app.contact_types(lower(name)) WHERE is_active;
+CREATE INDEX returns_area_idx ON app.returns(area_id) WHERE deleted_at IS NULL;
+CREATE TABLE app.auth_attempts (key_hash text PRIMARY KEY, attempts integer NOT NULL DEFAULT 0, expires_at timestamptz NOT NULL);
+CREATE INDEX auth_attempts_expiration_idx ON app.auth_attempts(expires_at);
+CREATE TABLE app.schema_migrations (version text PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now());
+INSERT INTO app.schema_migrations(version) VALUES ('001_auth');
 COMMIT;

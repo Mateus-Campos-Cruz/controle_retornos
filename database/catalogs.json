@@ -1,0 +1,61 @@
+﻿{
+    "empresa":  [
+                    "Thermas MG",
+                    "Itiquira",
+                    "AGI Bank",
+                    "Saúde e Vida",
+                    "Bali Park"
+                ],
+    "tipo":  [
+                 "Ligação",
+                 "Presencial",
+                 "Digital"
+             ],
+    "recebido":  [
+                     "RCS",
+                     "Email",
+                     "Carta",
+                     "Solange",
+                     "SMS",
+                     "WhatsApp",
+                     "Rede Social",
+                     "Não identificado",
+                     "Protesto",
+                     "SERASA",
+                     "Vendas"
+                 ],
+    "cobrador":  [
+                     "Aguinaldo Machado",
+                     "Ana Carolina de Oliveira Freitas",
+                     "Ana Paula Santana",
+                     "Antonio Magalhaes Neto",
+                     "Bruna Alves Costa Coelho Bandeira",
+                     "Cleber Silva Figueredo Camargos",
+                     "David Gonçalves Magalhaes",
+                     "Edna Aparecida Garcia Corral",
+                     "Elaine da Costa Duarte",
+                     "Emerson Pereira de Moraes",
+                     "Erika dos Santos Martins",
+                     "Esther Layse dos Reis Maciel",
+                     "Fabiano Silva Mendes",
+                     "Fabio Limonte",
+                     "Gabriel Basilio Cobrador",
+                     "Gleison Magalhaes da Silva",
+                     "Jorge Luiz Vieira da Silva",
+                     "Augusto Honorato",
+                     "Kelly Ketoly Costa Rocha",
+                     "Lilian Alessandra Oliveira",
+                     "Luana Caroline Fernandes Braz",
+                     "Marciel Marques",
+                     "Maria Rita Emilio Vieira",
+                     "Mary Taina Rodrigues dos Santos",
+                     "Milton Andrade Eufrasio",
+                     "Moises Rodrigues Machado",
+                     "Neide Campelo",
+                     "Rayane Passos Camargo Soares",
+                     "Ricardo Alexandre Cobrador",
+                     "Rodrigo Barbosa de Oliveira",
+                     "Vagner Pereira",
+                     "Walner Basilio"
+                 ]
+}
